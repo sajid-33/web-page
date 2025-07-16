@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple To-Do List</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mood Changer</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <div class="todo-container">
-    <h1>My To-Do List</h1>
-    <input type="text" id="todo-input" placeholder="Add a new task">
-    <button onclick="addTodo()">Add</button>
-    <ul id="todo-list"></ul>
+  <div class="container">
+    <div class="emoji" id="emoji">😐</div>
+    <h1>How are you feeling today?</h1>
+    <div class="mood-buttons">
+      <button data-mood="happy">😊 Happy</button>
+      <button data-mood="sad">😢 Sad</button>
+      <button data-mood="angry">😠 Angry</button>
+      <button data-mood="calm">😌 Calm</button>
+    </div>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
