@@ -1,21 +1,31 @@
-function addTodo() {
-  const input = document.getElementById('todo-input');
-  const taskText = input.value.trim();
-  if (!taskText) return;
+const moods = {
+  happy: {
+    color: "#ffe066",
+    emoji: "😊"
+  },
+  sad: {
+    color: "#74c0fc",
+    emoji: "😢"
+  },
+  angry: {
+    color: "#ff6b6b",
+    emoji: "😠"
+  },
+  calm: {
+    color: "#a5d8ff",
+    emoji: "😌"
+  }
+};
 
-  const list = document.getElementById('todo-list');
-  const li = document.createElement('li');
+const buttons = document.querySelectorAll("button[data-mood]");
+const emojiDisplay = document.getElementById("emoji");
 
-  const span = document.createElement('span');
-  span.textContent = taskText;
-
-  const delBtn = document.createElement('button');
-  delBtn.textContent = 'Delete';
-  delBtn.onclick = () => list.removeChild(li);
-
-  li.appendChild(span);
-  li.appendChild(delBtn);
-  list.appendChild(li);
-
-  input.value = '';
-}
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    const mood = button.getAttribute("data-mood");
+    document.body.style.backgroundColor = moods[mood].color;
+    emojiDisplay.textContent = moods[mood].emoji;
+    emojiDisplay.style.transform = "scale(1.2)";
+    setTimeout(() => emojiDisplay.style.transform = "scale(1)", 200);
+  });
+});
